@@ -1,0 +1,72 @@
+4
+3 1
+2 3 1
+2 3
+5 10
+2 4 5 1 3
+1 2
+1 3
+1 4
+1 5
+2 3
+2 4
+2 5
+3 4
+3 5
+4 5
+4 1
+3 1 4 2
+1 2
+4 2
+4 3 2 1
+1 2
+2 4
+
+1
+0
+2
+1
+
+
+
+while(is_sorted(arr+1,arr+n+1)==false)
+{
+	for(int i=0;i<m;i++)
+	{
+		if(arr[mpair[i][0]]==mpair[i][1] || arr[mpair[i][1]]==mpair[i][0] )
+		{   int temp=arr[mpair[i][0]];
+			arr[mpair[i][0]]=arr[mpair[i][1]];
+			arr[mpair[i][1]]=temp;
+		}
+	}
+	bool flag=true;
+   for(int i=1;i<=n;i++)
+   {
+   	if(s.find(arr[i])==s.end())
+   	{  s.insert(arr[i]); 
+	   int temp=arr[i];
+		arr[i]=arr[temp];
+		arr[temp]=temp;
+		ans++;
+		flag=false;
+		
+		break;
+	}
+   }
+   
+   if(flag)
+   {
+   	for(int i=1;i<=n;i++)
+   {
+   	if(arr[i]!=i)
+   	{   int temp=arr[i];
+		arr[i]=arr[temp];
+		arr[temp]=temp;
+		break;
+	}
+   }
+   }
+   
+   
+	
+}int 
